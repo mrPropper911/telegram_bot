@@ -1,9 +1,0 @@
-D:\CodeProgram\telegram-bot\src\test\java\by\vadim\community\telegrambot\command\CommandContainerTest.java
-D:\CodeProgram\telegram-bot\src\test\java\by\vadim\community\telegrambot\command\impl\StartCommandTest.java
-D:\CodeProgram\telegram-bot\src\test\java\by\vadim\community\telegrambot\command\impl\StopCommandTest.java
-D:\CodeProgram\telegram-bot\src\test\java\by\vadim\community\telegrambot\service\SendBotMessageServiceTest.java
-D:\CodeProgram\telegram-bot\src\test\java\by\vadim\community\telegrambot\command\AbstractCommandTest.java
-D:\CodeProgram\telegram-bot\src\test\java\by\vadim\community\telegrambot\command\impl\HelpCommandTest.java
-D:\CodeProgram\telegram-bot\src\test\java\by\vadim\community\telegrambot\TelegramBotApplicationTests.java
-D:\CodeProgram\telegram-bot\src\test\java\by\vadim\community\telegrambot\command\impl\UnknownCommandTest.java
-D:\CodeProgram\telegram-bot\src\test\java\by\vadim\community\telegrambot\command\impl\NoCommandTest.java

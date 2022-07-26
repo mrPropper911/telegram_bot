@@ -21,6 +21,6 @@ class StartCommandTest extends AbstractCommandTest{
 
     @Override
     protected Command getCommand() {
-        return new StartCommand(sendBotMessageService);
+        return new StartCommand(sendBotMessageService, telegramUserService);
     }
 }
