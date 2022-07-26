@@ -21,6 +21,6 @@ class StopCommandTest extends AbstractCommandTest {
 
     @Override
     protected Command getCommand() {
-        return new StopCommand(sendBotMessageService);
+        return new StopCommand(sendBotMessageService, telegramUserService);
     }
 }

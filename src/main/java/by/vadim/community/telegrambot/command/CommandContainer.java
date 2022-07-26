@@ -2,6 +2,7 @@ package by.vadim.community.telegrambot.command;
 
 import by.vadim.community.telegrambot.command.impl.*;
 import by.vadim.community.telegrambot.service.SendBotMessageService;
+import by.vadim.community.telegrambot.service.TelegramUserService;
 import com.google.common.collect.ImmutableMap;
 
 import static by.vadim.community.telegrambot.command.CommandName.*;
@@ -14,12 +15,14 @@ public class CommandContainer {
     private final ImmutableMap<Object,Object> commandImmutableMap;
     private final Command unknownCommand;
 
-    public CommandContainer(SendBotMessageService sendBotMessageService) {
+    public CommandContainer(SendBotMessageService sendBotMessageService,
+                            TelegramUserService telegramUserService) {
         commandImmutableMap = ImmutableMap.<Object, Object>builder()
-                .put(START.getCommandName(), new StartCommand(sendBotMessageService))
-                .put(STOP.getCommandName(), new StopCommand(sendBotMessageService))
+                .put(START.getCommandName(), new StartCommand(sendBotMessageService, telegramUserService))
+                .put(STOP.getCommandName(), new StopCommand(sendBotMessageService, telegramUserService))
                 .put(HELP.getCommandName(), new HelpCommand(sendBotMessageService))
                 .put(NO.getCommandName(), new NoCommand(sendBotMessageService))
+                .put(STAT.getCommandName(), new StatCommand(sendBotMessageService,telegramUserService))
                 .build();
 
         unknownCommand = new UnknownCommand(sendBotMessageService);
