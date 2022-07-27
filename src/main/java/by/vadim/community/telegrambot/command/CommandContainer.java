@@ -1,6 +1,8 @@
 package by.vadim.community.telegrambot.command;
 
 import by.vadim.community.telegrambot.command.impl.*;
+import by.vadim.community.telegrambot.javarushclient.JavaRushGroupClient;
+import by.vadim.community.telegrambot.service.GroupSubService;
 import by.vadim.community.telegrambot.service.SendBotMessageService;
 import by.vadim.community.telegrambot.service.TelegramUserService;
 import com.google.common.collect.ImmutableMap;
@@ -16,13 +18,17 @@ public class CommandContainer {
     private final Command unknownCommand;
 
     public CommandContainer(SendBotMessageService sendBotMessageService,
-                            TelegramUserService telegramUserService) {
+                            TelegramUserService telegramUserService,
+                            JavaRushGroupClient javaRushGroupClient,
+                            GroupSubService groupSubService) {
         commandImmutableMap = ImmutableMap.<Object, Object>builder()
                 .put(START.getCommandName(), new StartCommand(sendBotMessageService, telegramUserService))
                 .put(STOP.getCommandName(), new StopCommand(sendBotMessageService, telegramUserService))
                 .put(HELP.getCommandName(), new HelpCommand(sendBotMessageService))
                 .put(NO.getCommandName(), new NoCommand(sendBotMessageService))
                 .put(STAT.getCommandName(), new StatCommand(sendBotMessageService,telegramUserService))
+                .put(ADD_GROUP_SUB.getCommandName(), new AddGroupSubsCommand(sendBotMessageService,javaRushGroupClient,groupSubService))
+                .put(LIST_GROUP_SUB.getCommandName(), new ListGroupSubCommand(sendBotMessageService, telegramUserService))
                 .build();
 
         unknownCommand = new UnknownCommand(sendBotMessageService);

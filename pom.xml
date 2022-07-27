@@ -15,6 +15,8 @@
 	<description>Demo test telegram bot</description>
 	<properties>
 		<java.version>16</java.version>
+		<unirest.version>3.13.10</unirest.version>
+		<apache.commons.version>3.11</apache.commons.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -60,6 +62,18 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+		<dependency>
+			<groupId>com.konghq</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>${unirest.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
