@@ -47,7 +47,17 @@ public class GroupSubServiceImpl implements GroupSubService {
             groupSub.setId(groupDiscussionInfo.getId());
             groupSub.setTitle(groupDiscussionInfo.getTitle());
         }
-
         return groupSubsRepository.save(groupSub);
     }
+
+    @Override
+    public GroupSub save(GroupSub groupSub) {
+        return groupSubsRepository.save(groupSub);
+    }
+
+    @Override
+    public Optional<GroupSub> findById(Integer id) {
+        return groupSubsRepository.findById(id);
+    }
+
 }
