@@ -1,6 +1,8 @@
 package by.vadim.community.telegrambot.command;
 
 import by.vadim.community.telegrambot.command.impl.UnknownCommand;
+import by.vadim.community.telegrambot.javarushclient.JavaRushGroupClient;
+import by.vadim.community.telegrambot.service.GroupSubService;
 import by.vadim.community.telegrambot.service.SendBotMessageService;
 import by.vadim.community.telegrambot.service.TelegramUserService;
 import org.junit.jupiter.api.Assertions;
@@ -24,7 +26,10 @@ class CommandContainerTest {
     public void init(){
         SendBotMessageService sendBotMessageService = Mockito.mock(SendBotMessageService.class);
         TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
-        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService);
+        JavaRushGroupClient javaRushGroupClient = Mockito.mock(JavaRushGroupClient.class);
+        GroupSubService groupSubService = Mockito.mock(GroupSubService.class);
+        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService,
+                javaRushGroupClient, groupSubService);
     }
 
     @Test
